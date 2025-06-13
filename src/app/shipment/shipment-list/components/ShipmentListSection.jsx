@@ -55,7 +55,7 @@ export default function ShipmentListSection() {
                 fieldTitle: "Shipment Code",
                 fieldName: "shipmentCode",
                 format: "{0:LINK}",
-                fieldLink: routes_list.shipment_detail + "?code=",
+                fieldLink: routes_list.shipment_detail + "/",
                 isHidden: false,
               },
               {

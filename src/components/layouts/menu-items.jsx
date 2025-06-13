@@ -1,11 +1,14 @@
 import {
   PiUserSquareBold,
-  PiAtomBold,
   PiUserListBold,
   PiUserCirclePlusBold,
   PiBoatBold,
   PiStorefrontBold,
+  PiListBulletsBold,
+  PiMegaphoneSimpleBold,
+  PiMegaphoneBold,
   PiChartBarBold,
+  PiSquaresFourBold,
   PiWrenchBold,
 } from "react-icons/pi";
 
@@ -15,7 +18,7 @@ export const menuItems = [
   {
     name: "Dashboard",
     href: routes_list.dashboard,
-    icon: <PiAtomBold />,
+    icon: <PiSquaresFourBold />,
     type: "all",
   },
 
@@ -86,17 +89,17 @@ export const menuItems = [
     name: "Promotion Management",
     type: "all",
     href: "#",
-    icon: <PiUserSquareBold />,
+    icon: <PiMegaphoneBold />,
     dropdownItems: [
       {
         name: "List of Promotion",
         href: routes_list.promotion_list,
-        icon: <PiUserSquareBold />,
+        icon: <PiListBulletsBold />,
       },
       {
         name: "Add New Promotion",
         href: routes_list.create_promotion,
-        icon: <PiUserCirclePlusBold />,
+        icon: <PiMegaphoneSimpleBold />,
       },
     ],
   },

@@ -37,7 +37,7 @@ export default function DashboardTabs({ recentShipments }) {
                   fieldName: "shipmentCode",
                   isHidden: false,
                   format: "{0:LINK}",
-                  fieldLink: routes_list.shipment_detail + "?code=",
+                  fieldLink: routes_list.shipment_detail + "/",
                 },
                 {
                   fieldTitle: "From Name",

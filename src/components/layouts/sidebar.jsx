@@ -8,7 +8,6 @@ import SimpleBar from "simplebar-react";
 import "simplebar-react/dist/simplebar.min.css";
 import { menuItems } from "./menu-items"; // ✅ Path for menu items
 import { Collapse, Title } from "rizzui";
-import { GetClientDetails } from "@/helpers/auth";
 import { useSelector } from "react-redux";
 import { useRouter } from "next/navigation";
 import routes_list from "@/router/routes-list";
@@ -17,15 +16,25 @@ export default function Sidebar({ className, toggle, toggleVal }) {
   const [pathname, setPathname] = useState("");
   const details = useSelector((state) => state.auth.user);
   const accessToken = useSelector((state) => state.auth.accessToken);
-const router = useRouter()
+  const router = useRouter()
 
   // Handle client-side routing to get pathname
   useEffect(() => {
-    if(!details && !accessToken){
-       router.push(routes_list.login)
+    if (!details && !accessToken){
+      router.push(routes_list.login)
     }
     setPathname(window.location.pathname);
   }, []);
+
+  function navigateWithPrefetch(router, href) {
+    if (!href) return;
+    // if (process.env.NODE_ENV === "production") {
+      router.prefetch(href);
+      setTimeout(() => router.push(href), 100); // allow prefetching to warm cache
+    // } else {
+    //   router.push(href); // skip prefetch in dev
+    // }
+  }
 
   return (
     <aside
@@ -117,13 +126,14 @@ const router = useRouter()
                             <Link
                               href={dropdownItem.href}
                               key={`${dropdownItem.name}-${idx}`}
-                              onClick={() => reloadURL(dropdownItem.href)} // Optional reload
+                              // onClick={() => reloadURL(dropdownItem.href)} // Optional reload
                               className={cn(
                                 "group relative mx-3 my-0.5 flex items-center justify-between rounded-md px-2 py-2 font-medium capitalize lg:my-1 2xl:mx-5 2xl:my-2",
                                 isChildActive
                                   ? "text-white before:absolute before:-start-3 before:block before:h-4/5 before:w-1 before:rounded-ee-md before:rounded-se-md before:bg-primary 2xl:before:-start-5"
                                   : "text-grey-200 transition-colors duration-200 hover:text-white"
                               )}
+                              prefetch
                             >
                               <div className="flex items-center truncate">
                                 {dropdownItem.icon && (
@@ -142,13 +152,14 @@ const router = useRouter()
                     ) : (
                       <Link
                         href={item.href}
-                        onClick={() => reloadURL(item.href)}
+                        // onClick={() => reloadURL(item.href)}
                         className={cn(
                           "group relative mx-3 my-0.5 flex items-center justify-between rounded-md px-2 py-2 font-medium capitalize lg:my-1 2xl:mx-5 2xl:my-2",
                           isActive
                             ? "text-white before:absolute before:-start-3 before:block before:h-4/5 before:w-1 before:rounded-ee-md before:rounded-se-md before:bg-primary 2xl:before:-start-5"
                             : "text-grey-200 transition-colors duration-200 hover:text-white"
                         )}
+                        prefetch
                       >
                         <div className="flex items-center truncate">
                           {item.icon && (

@@ -51,7 +51,6 @@ export default function CustomerListSection() {
           <TelerikTable
             data={data}
             fields={[
-             
               {
                 fieldTitle: "First Name",
                 fieldName: "firstName",

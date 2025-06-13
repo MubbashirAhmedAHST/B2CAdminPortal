@@ -795,7 +795,8 @@ export default function TelerikTable({
                           props.dataItem[field.fieldLinkProperty2]
                         ) + props.dataItem[props.field]
                     }
-                    target="_blank"
+                    // target="_blank"
+                    prefetch
                   >
                     {props.dataItem[props.field]}
                   </Link>
@@ -803,7 +804,8 @@ export default function TelerikTable({
                   <Link
                     className="font-semibold"
                     href={field.fieldLink + props.dataItem[props.field]}
-                    target="_blank"
+                    // target="_blank"
+                    prefetch
                   >
                     {props.dataItem[props.field]}
                   </Link>
@@ -902,6 +904,7 @@ export default function TelerikTable({
                     href={`${d.fieldURL}${props.dataItem[d.fieldProperty]}`}
                     title="Show Details"
                     className="dropdown-item flex items-center"
+                    prefetch
                   >
                     <div className="flex">
                       <PiMagnifyingGlassBold className="me-1 h-[17px] w-[17px]" />
@@ -938,6 +941,7 @@ export default function TelerikTable({
                     }
                     title={d.fieldTitle}
                     className="dropdown-item flex"
+                    prefetch
                   >
                     {d.fieldIcon || (
                       <PiPencilBold className="me-1 h-[17px] w-[17px] mt-[3px]" />
