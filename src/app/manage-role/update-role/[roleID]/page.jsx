@@ -5,8 +5,8 @@ export const metadata = {
   description: "Role Detail page",
 };
 
-export default function UpdateRole({params}) {
-      const {roleID} =params
+export default async function UpdateRole({params}) {
+      const {roleID} = await params
   return (
     <UpdateRoleSection roleID={roleID}/>
   )

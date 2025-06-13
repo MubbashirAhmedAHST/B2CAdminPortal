@@ -5,8 +5,8 @@ export const metadata = {
   description: "Vendor Detail page",
 };
 
-export default function VendorProfilePage({ params }) {
-  const { vendorID } =  params;
+export default async function VendorProfilePage({ params }) {
+  const { vendorID } = await params;
 
   return <VendorDetailSection vendorID={vendorID} />;
 }

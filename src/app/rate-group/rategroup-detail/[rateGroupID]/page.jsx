@@ -5,7 +5,7 @@ export const metadata = {
   description: "Rate Group Detail page",
 };
 
-export default function RateGroupDetail({params}) {
-  const {rateGroupID} = params
+export default async function RateGroupDetail({params}) {
+  const {rateGroupID} = await params
   return <RateGroupDetailSection rateGroupID={rateGroupID}/>;
 }

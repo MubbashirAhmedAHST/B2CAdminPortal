@@ -5,8 +5,8 @@ export const metadata = {
   description: "Employee Detail page",
 };
 
-export default  function EmployeeProfilePage({ params }) {
-  const { adminID } =  params;
+export default async function EmployeeProfilePage({ params }) {
+  const { adminID } = await params;
 
   return <EmployeeDetail adminID={adminID} />;
 }

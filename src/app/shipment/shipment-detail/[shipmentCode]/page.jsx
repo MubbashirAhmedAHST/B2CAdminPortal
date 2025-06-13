@@ -6,7 +6,7 @@ export const metadata = {
 };
 
 export default async function ShipmentPage({ params }) {
-  const { shipmentCode } = params;
+  const { shipmentCode } = await params;
 
   return <ShipmentDetailsSection shipmentCode={shipmentCode} />;
 }

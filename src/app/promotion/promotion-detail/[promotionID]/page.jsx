@@ -5,7 +5,7 @@ export const metadata = {
   description: "Promotion Detail page",
 };
 
-export default  function PromotionDetail({ params }) {
-  const { promotionID } =  params;
+export default async function PromotionDetail({ params }) {
+  const { promotionID } = await params;
   return <PromotionDetailSection promotionID={promotionID} />;
 }
