@@ -8,7 +8,7 @@ import SimpleBar from "simplebar-react";
 import "simplebar-react/dist/simplebar.min.css";
 import { menuItems } from "./menu-items"; // ✅ Path for menu items
 import { Collapse, Title } from "rizzui";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/navigation";
 import routes_list from "@/router/routes-list";
 
