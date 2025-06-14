@@ -27,7 +27,7 @@ export const constants = {
   AddNewEmployee: "admin/employee/register",
   UpdateEmployee: "admin/employee/profile/update",
   DeleteEmployee: "admin/employee/profile/delete",
-
+ChangePasswordAPI: "admin/employee/profile/changepassword",
   // vendor api
   ListOfVendor: "admin/vendor/vendors/list",
   VendorProfile: "admin/vendor/profile/detail",

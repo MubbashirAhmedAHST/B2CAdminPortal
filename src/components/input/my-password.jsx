@@ -1,5 +1,4 @@
-"use client";
-import { Input, Password } from "rizzui";
+import { Password } from "rizzui";
 
 export default function MyPassword({
   inputID = "",
@@ -16,6 +15,7 @@ export default function MyPassword({
   return (
     <Password
       id={inputID}
+      
       label={inputLabel}
       placeholder={inputPlaceholder}
       value={inputValue}
@@ -25,6 +25,8 @@ export default function MyPassword({
       readOnly={inputIsReadOnly}
       className={inputClass}
       labelClassName={inputLabelClass}
+      /** Ensure toggle icon appears */
+      inputProps={{ type: "password" }}
     />
   );
 }
